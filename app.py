@@ -125,7 +125,9 @@ elif choice=="Upcoming Events":
     ]
 
     stcal.calendar(options=calendar_options, events=calendar_events, key="cal")
-    if "eventClick" in st.session_state.cal:
+    if "eventClick" not in st.session_state.cal:
+        st.subheader("Choose an event for details")
+    else:
         event = st.session_state["cal"]["eventClick"]["event"]
         st.subheader(event["title"])
         if event["allDay"]:
@@ -133,6 +135,4 @@ elif choice=="Upcoming Events":
         else:
             st.subheader(f'Start: {event["start"]}')
             st.subheader(f'End: {event["end"]}')
-    else:
-        st.subheader("Choose an event for details")
     
