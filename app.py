@@ -59,7 +59,7 @@ elif authentication_status == False:
 if choice == "Home":
 
     with st.columns(3)[1]:
-        st.image('Images/brand-img.jpg')
+        st.image('Images/wqu-img.png')
 
     st.title('Hello, world!', )
     st.header('This page is for introducing your website, product, and ideas!')
