@@ -97,9 +97,9 @@ elif choice == "About":
 elif choice=="Upcoming Events":
 
     if "cal" not in st.session_state:
-        st.session_state["cal"] = True
+        st.session_state["cal"] = stcal.calendar()
 
-    st.subheader("When to find us!")
+    st.header("When to find us!")
 
     calendar_options = {"selectable": True}
     
@@ -125,7 +125,8 @@ elif choice=="Upcoming Events":
     ]
 
     stcal.calendar(options=calendar_options, events=calendar_events, key="cal")
-    if "eventClick" not in st.session_state.cal:
+    # if "eventClick" not in st.session_state.cal:
+    if isinstance(st.session_state.cal, dict) and "eventClick" not in st.session_state.cal:
         st.subheader("Choose an event for details")
     else:
         event = st.session_state["cal"]["eventClick"]["event"]
@@ -134,5 +135,4 @@ elif choice=="Upcoming Events":
             st.subheader("All Day Event")
         else:
             st.subheader(f'Start: {event["start"]}')
-            st.subheader(f'End: {event["end"]}')
-    
+            st.subheader(f'End: {event["end"]}')       
