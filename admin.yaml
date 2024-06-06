@@ -1,0 +1,13 @@
+credentials:
+  usernames:
+    anika:
+      email: anika.nacey@wqu.edu
+      name: Anika
+      password: '$2b$12$NYVFFzqU2Mia0HqciK51KO54rwGba9bgkl8HVUuAKXbPwnFWvHMMa'
+cookie:
+  expiry_days: 0
+  key: xCvBnM # Must be string
+  name: cookie_1
+preauthorized:
+  emails:
+  - anikanacey@gmail.com
