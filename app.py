@@ -98,31 +98,30 @@ elif choice == "About":
     st.subheader("Some basic facts about what we do!")
     st.balloons()
 
-elif choice=="Upcoming Events":
-
+elif choice == "Upcoming Events":
     st.header("When to find us!")
 
     calendar_options = {"selectable": True}
     
     calendar_events = [
-    {
-        "title": "Streamlit Presentation",
-        "start": "2024-06-06T13:00:00",
-        "end": "2024-06-06T14:00:00",
-        "resourceId": "a",
-    },
-    {
-        "title": "Day of Code",
-        "start": "2024-06-10",
-        "end": "2024-06-10",
-        "resourceId": "b",
-    },
-    {
-        "title": "D&D",
-        "start": "2024-06-06T18:00:00",
-        "end": "2024-06-06T20:00:00",
-        "resourceId": "a",
-    }
+        {
+            "title": "Streamlit Presentation",
+            "start": "2024-06-06T13:00:00",
+            "end": "2024-06-06T14:00:00",
+            "resourceId": "a",
+        },
+        {
+            "title": "Day of Code",
+            "start": "2024-06-10",
+            "end": "2024-06-10",
+            "resourceId": "b",
+        },
+        {
+            "title": "D&D",
+            "start": "2024-06-06T18:00:00",
+            "end": "2024-06-06T20:00:00",
+            "resourceId": "a",
+        }
     ]
 
     stcal.calendar(options=calendar_options, events=calendar_events, key="cal")
@@ -135,4 +134,4 @@ elif choice=="Upcoming Events":
             st.subheader("All Day Event")
         else:
             st.subheader(f'Start: {event["start"]}')
-            st.subheader(f'End: {event["end"]}')       
+            st.subheader(f'End: {event["end"]}')
