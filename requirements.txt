@@ -1,4 +1,4 @@
-streamlit
+streamlit==1.22.0
 pyyaml
 streamlit_authenticator
 streamlit_calendar
