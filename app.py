@@ -101,9 +101,6 @@ elif choice == "About":
 elif choice == "Upcoming Events":
     st.header("When to find us!")
 
-    if "cal" not in st.session_state:
-        st.session_state["cal"] = stcal.calendar()
-
     calendar_options = {"selectable": True}
     
     calendar_events = [
@@ -126,8 +123,10 @@ elif choice == "Upcoming Events":
             "resourceId": "a",
         }
     ]
-
-    stcal.calendar(options=calendar_options, events=calendar_events, key="cal")
+    if "cal" not in st.session_state:
+        st.session_state["cal"] = stcal.calendar(options=calendar_options, events=calendar_events, key="cal")
+        
+    # stcal.calendar(options=calendar_options, events=calendar_events, key="cal")
     if "eventClick" not in st.session_state.cal:
         st.subheader("Choose an event for details")
     else:
