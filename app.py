@@ -126,7 +126,7 @@ elif choice == "Upcoming Events":
     if "cal" not in st.session_state:
         st.session_state["cal"] = stcal.calendar(options=calendar_options, events=calendar_events, key="cal")
         
-    # stcal.calendar(options=calendar_options, events=calendar_events, key="cal")
+    stcal.calendar(options=calendar_options, events=calendar_events, key="cal")
     if "eventClick" not in st.session_state.cal:
         st.subheader("Choose an event for details")
     else:
