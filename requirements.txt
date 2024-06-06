@@ -2,3 +2,4 @@ streamlit
 pyyaml
 streamlit_authenticator
 streamlit_calendar
+streamlit_option_menu
