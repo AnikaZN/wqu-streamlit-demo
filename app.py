@@ -28,6 +28,10 @@ if "image_hiding_state" not in st.session_state:
         "chbox4": False
     }
 
+if "cal" not in st.session_state:
+    st.session_state["cal"] = stcal.calendar()
+
+
 with st.sidebar:
     choice = option_menu("Anika's Demo Site",
                         ['Home', 'About', 'Upcoming Events'],
@@ -96,9 +100,6 @@ elif choice == "About":
 
 elif choice=="Upcoming Events":
 
-    if "cal" not in st.session_state:
-        st.session_state["cal"] = stcal.calendar()
-
     st.header("When to find us!")
 
     calendar_options = {"selectable": True}
@@ -125,7 +126,6 @@ elif choice=="Upcoming Events":
     ]
 
     stcal.calendar(options=calendar_options, events=calendar_events, key="cal")
-    # if "eventClick" not in st.session_state.cal:
     if "eventClick" not in st.session_state.cal:
         st.subheader("Choose an event for details")
     else:
