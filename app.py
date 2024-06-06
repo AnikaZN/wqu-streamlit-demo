@@ -98,7 +98,7 @@ elif choice == "About":
     st.subheader("Some basic facts about what we do!")
     st.balloons()
 
-elif choice == "Upcoming Events":
+elif choice == "Upcoming Events" and authentication_status == False:
     st.header("When to find us!")
 
     calendar_options = {"selectable": True}
