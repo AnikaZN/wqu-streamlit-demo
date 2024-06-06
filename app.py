@@ -28,8 +28,8 @@ if "image_hiding_state" not in st.session_state:
         "chbox4": False
     }
 
-# if "cal" not in st.session_state:
-#     st.session_state["cal"] = stcal.calendar()
+if "cal" not in st.session_state:
+    st.session_state["cal"] = stcal.calendar()
 
 
 with st.sidebar:
@@ -123,9 +123,7 @@ elif choice == "Upcoming Events":
             "resourceId": "a",
         }
     ]
-    if "cal" not in st.session_state:
-        st.session_state["cal"] = stcal.calendar(options=calendar_options, events=calendar_events, key="cal")
-        
+
     stcal.calendar(options=calendar_options, events=calendar_events, key="cal")
     if "eventClick" not in st.session_state.cal:
         st.subheader("Choose an event for details")
